@@ -10,11 +10,19 @@ import time
 def main(arg):
     file = open(arg, 'r')
 
-    n = int(file.readline())
-    participants = [[int(i), participant] for (i, participant) in [file.readline().strip().split(',') for _ in range(n)]]
+    number_of_participants = int(file.readline())
+    participants = [[int(i), participant] for (i, participant) in [file.readline().strip().split(',') for _ in range(number_of_participants)]]
 
-    results =
+    number_of_matchups = file.readline().split(',')[2]
+    print(number_of_matchups)
+
+    results = TournamentResults(participants)
+    print(results.get_participant_name(45))
+
+    # Start of the algorithm
     time_start = time.perf_counter()
+
+    # End of the algorithm
     time_finish = time.perf_counter()
     print(f'Finished in {round(time_finish - time_start, 3)} second(s)')
 
