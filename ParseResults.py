@@ -1,7 +1,7 @@
 from TournamentResults import *
 
 
-class parse_results(TournamentResults):
+class ParseResults(TournamentResults):
         @staticmethod
         def parse(filename):
             file = open(filename, 'r')
@@ -13,9 +13,9 @@ class parse_results(TournamentResults):
 
             for _ in range(number_of_matchups):
                 matchup = file.readline().strip().split(',')
-                participant_a = int(matchup[0])
-                participant_b = int(matchup[1])
-                score = int(matchup[2])
+                score = int(matchup[0])
+                participant_a = int(matchup[1])
+                participant_b = int(matchup[2])
                 results.add_matchup(participant_a, participant_b, score)
             file.close()
 
