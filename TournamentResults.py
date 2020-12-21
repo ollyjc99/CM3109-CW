@@ -3,12 +3,11 @@ class TournamentResults:
         self.participants = participants
         self.matchups = dict()
 
-    def __str__(self):
-        return 'Tournament Results Super Class'
+    # Adds each matchup with the resulting score to the dictionary matchups
 
     def add_matchup(self, a, b, score):
         matchup = Matchup(a, b)
-        self.matchups.update({matchup:score})
+        self.matchups.update({matchup: score})
 
     def get_matchup(self, a, b):
         matchup = Matchup(a, b)
@@ -33,9 +32,11 @@ class Matchup:
     def reverse(self):
         return Matchup(self.participant_b, self.participant_a)
 
-    # def __eq__(self, o):
-    #     if o.__class__() != self.__class__:
-    #         pass
+    def __eq__(self, Obj):
+        if Obj.__class__.__name__ != self.__class__.__name__:
+            return False
+
+        return self.participant_a == Obj.participant_a and self.participant_b == Obj.participant_b
 
     def __hash__(self):
         return self.participant_a * 65536 + self.participant_b
