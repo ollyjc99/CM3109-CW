@@ -19,4 +19,4 @@ class ParseResults(TournamentResults):
                 results.add_matchup(participant_a, participant_b, score)
             file.close()
 
-            return results
+            return results, number_of_participants
