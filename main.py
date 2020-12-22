@@ -9,8 +9,8 @@ import time
 
 
 def main(arg):
-    results = ParseResults.parse(arg)
-    initial_ranking = Ranking(results, [i for i in range(1, 46 + 1)])
+    results, n = ParseResults.parse(arg)
+    initial_ranking = Ranking(results, [i for i in range(1, n + 1)])
     print('Average runtime ≈ 40.0(s) due to shamefully poor programming, please bear with ...')
     # Start of the algorithm
     time_start = time.perf_counter()
