@@ -40,4 +40,3 @@ if __name__ == "__main__":
     parser.add_argument('results', type=str, help='Tournament Results')
     args = parser.parse_args()
     main(args.results)
-
