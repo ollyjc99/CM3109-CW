@@ -57,6 +57,7 @@ class Ranking(TournamentResults):
             ranking[target - 1] = self.ranking[source - 1]
             source += 1
             target += 1
+
         return Ranking(self.results, ranking, self.calculate_n_ks(old_rank, new_rank))
 
     # An attempt speed up runtime by not completely recalculating the Kenemy Score but isn't used as it doesn't work
@@ -71,6 +72,7 @@ class Ranking(TournamentResults):
             count = 1
         else:
             count = -1
+
         for i in range(new_rank, old_rank, count):
             result = self.results.get_matchup(participant, self.ranking[i - 1])
 
